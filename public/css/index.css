@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,700&display=swap&subset=latin-ext");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+img {
+  display: block;
+}
+
+input {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Lato', sans-serif;
+}
+
+.background1 {
+  background-color: #F5F5F5;
+  width: 100%;
+}
+
+#topBar {
+  background-color: #F5F5F5;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-size: 28px;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1180px;
+}
+
+@media all and (max-width: 1200px) {
+  #topBar {
+    width: 960px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  #topBar {
+    width: 748px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #topBar {
+    width: 542px;
+  }
+}
+
+@media all and (max-width: 572px) {
+  #topBar {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 572px) {
+  #topBar {
+    font-size: 26px;
+  }
+}
+
+@media all and (max-width: 390px) {
+  #topBar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#topBarL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  color: #483030;
+}
+
+@media all and (max-width: 572px) {
+  #topBarL {
+    font-size: 18px;
+  }
+}
+
+#topBarImg {
+  width: 56px;
+}
+
+@media all and (max-width: 572px) {
+  #topBarImg {
+    width: 36px;
+  }
+}
+
+#topBarText {
+  margin-left: 4px;
+}
+
+#topBarSklep {
+  font-weight: 700;
+}
+
+#topBarBez {
+  font-weight: 300;
+  font-style: italic;
+}
+
+#topBarR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-size: 0.54em;
+  color: #635D76;
+}
+
+@media all and (max-width: 572px) {
+  #topBarR {
+    font-size: 0.50em;
+  }
+}
+
+@media all and (max-width: 390px) {
+  #topBarR {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#topBarR * {
+  margin: 2px 4px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.background2 {
+  background-color: #BE5252;
+  width: 100%;
+}
+
+#navBar {
+  font-size: 16px;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1180px;
+}
+
+@media all and (max-width: 1200px) {
+  #navBar {
+    width: 960px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  #navBar {
+    width: 748px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #navBar {
+    width: 542px;
+  }
+}
+
+@media all and (max-width: 572px) {
+  #navBar {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 572px) {
+  #navBar {
+    display: block;
+  }
+}
+
+#navBarL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media all and (max-width: 572px) {
+  #navBarL {
+    display: none;
+  }
+}
+
+#navBarKat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  padding: 0 12px;
+}
+
+#navBarKat img {
+  width: 10px;
+  margin-left: 3px;
+}
+
+#navBarR input {
+  border: none;
+  border-radius: 3px;
+  padding: 3px;
+  font-weight: 300;
+  font-size: 0.85em;
+}
+
+#navBarR input:focus {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0px 0px 7px 1px rgba(133, 24, 24, 0.75);
+  box-shadow: 0px 0px 7px 1px rgba(133, 24, 24, 0.75);
+}
+
+@media all and (max-width: 572px) {
+  #navBarR {
+    display: none;
+  }
+}
+
+#navBarMenu {
+  display: none;
+  padding: 4px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+#navBarMenu #navBarMenuImgContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#navBarMenu img {
+  height: 18px;
+}
+
+@media all and (max-width: 572px) {
+  #navBarMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+}
+
+.navBarTiles {
+  height: 40px;
+  padding: 0 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.navBarTiles:first-child {
+  font-weight: 400;
+  position: relative;
+  padding: 0;
+  display: block;
+}
+
+.navBarTiles:hover {
+  background-color: #bb3b3b;
+}
+
+.navBarTiles > ul {
+  position: absolute;
+  background-color: #BE5252;
+  width: 100%;
+  display: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.navBarTiles > ul > li {
+  padding: 4px 12px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.navBarTiles > ul > li:hover {
+  background-color: #bb3b3b;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.navBarTiles:hover > ul {
+  display: block;
+}
