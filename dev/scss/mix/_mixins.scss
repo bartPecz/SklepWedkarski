@@ -1,0 +1,41 @@
+@mixin margins($zm){
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    width: $zm;
+}
+
+@mixin back1{
+    .background1{
+        background-color: $gray1;
+        width: 100%;
+    }
+}
+
+@mixin back2{
+    .background2{
+        background-color: $red1;
+        width: 100%;
+    }
+    
+}
+
+@mixin responsiveWidth{
+
+    @media all and (max-width:$eL){
+        width: $Lw;
+    }
+
+    @media all and (max-width: $L){
+        width: $Mw
+    }
+
+    @media all and (max-width: $M){
+        width: $Sw;
+    }
+
+    @media all and (max-width: $S){
+        width: 95%;
+    }
+}

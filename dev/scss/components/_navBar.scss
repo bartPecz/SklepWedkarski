@@ -1,0 +1,165 @@
+@include back2;
+
+.navBar{
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    @include margins($eLw);
+    @include responsiveWidth;
+
+    @media all and (max-width: $S){
+        font-size: 12px;
+    }
+
+    @media all and (max-width: $eS){
+        display: block;
+    }
+
+    &L{
+        display: flex;
+        align-items: center;  
+        @media all and (max-width: $eS){
+            display: none;
+        }
+    }
+
+    &Kat{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 12px;
+        // height: 40px;            //zamiast paddingu u góry
+        // padding: 0 12px;        //zamiast paddingu u góry
+
+        @media all and (max-width: $S){
+            padding: {
+                top: 6px;
+                bottom: 6px;
+            }
+        }
+
+        img{
+            width: 10px;
+            margin-left: 3px;
+        }
+    }
+
+    &R{
+        display: flex;
+        justify-content: center;
+        padding: 3px 0;
+
+        input{
+            border: none;
+            border-radius: 3px;
+            padding: 3px;
+            font-weight: 300;
+            font-size: 0.85em;
+            
+
+            &:focus{
+                background-color: #fafafa;
+                -webkit-box-shadow: 0px 0px 7px 1px rgba(133,24,24,0.75);
+                -moz-box-shadow: 0px 0px 7px 1px rgba(133,24,24,0.75);
+                box-shadow: 0px 0px 7px 1px rgba(133,24,24,0.75);
+                }                
+        }
+
+        @media all and (max-width: $eS){
+            display: none;
+        }
+
+    }
+
+    .navBarInput{
+        display: flex;
+        justify-content: center;
+    }
+
+    &Menu{
+        display: none;
+        padding: 4px 0;
+        text-align: center;
+        cursor: pointer;
+
+       .navBarMenuImgContainer{
+            display: flex;
+            justify-content: center;
+       }
+
+        img{
+            height: 18px;
+        }
+
+        @media all and (max-width: $eS){
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+.navBarTiles{
+    padding: 10px 12px; 
+    // height: 40px;            //zamiast paddingu u góry
+    // padding: 0 12px;        //zamiast paddingu u góry
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    text-align: center;
+    cursor: pointer;
+
+    @media all and (max-width: $S){
+        padding: 0 6px;        
+    }
+
+    &:first-child{
+        font-weight: 400;
+        position: relative;
+        padding: 0;
+    }
+
+    &:hover{
+        background-color: $red1hover;
+    }
+
+    > ul{
+        position: absolute;
+        background-color: $red1;
+        width: 100%;
+        display: none;
+        border-bottom: {
+            left-radius: 4px;
+            right-radius: 4px;
+        };
+
+        > li{
+            padding: 4px 12px;
+            text-align: center;
+            font-weight: 300;
+
+            &:hover{
+                background-color: $red1hover;
+                border-bottom: {
+                    left-radius: 4px;
+                    right-radius: 4px;
+                }
+            }
+        }
+    }
+
+    &:hover > ul{
+        display: block;
+    }
+
+}
+
+//JS
+
+.navBarLRShow{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}

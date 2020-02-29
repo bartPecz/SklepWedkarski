@@ -84,7 +84,7 @@ body {
   }
 }
 
-@media all and (max-width: 390px) {
+@media all and (max-width: 410px) {
   #topBar {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -152,7 +152,7 @@ body {
   }
 }
 
-@media all and (max-width: 390px) {
+@media all and (max-width: 410px) {
   #topBarR {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -171,11 +171,11 @@ body {
 }
 
 .background2 {
-  background-color: #BE5252;
+  background-color: #be5252;
   width: 100%;
 }
 
-#navBar {
+.navBar {
   font-size: 16px;
   font-weight: 300;
   display: -webkit-box;
@@ -194,36 +194,42 @@ body {
 }
 
 @media all and (max-width: 1200px) {
-  #navBar {
+  .navBar {
     width: 960px;
   }
 }
 
 @media all and (max-width: 992px) {
-  #navBar {
+  .navBar {
     width: 748px;
   }
 }
 
 @media all and (max-width: 768px) {
-  #navBar {
+  .navBar {
     width: 542px;
   }
 }
 
 @media all and (max-width: 572px) {
-  #navBar {
+  .navBar {
     width: 95%;
   }
 }
 
 @media all and (max-width: 572px) {
-  #navBar {
+  .navBar {
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 410px) {
+  .navBar {
     display: block;
   }
 }
 
-#navBarL {
+.navBarL {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,29 +238,48 @@ body {
           align-items: center;
 }
 
-@media all and (max-width: 572px) {
-  #navBarL {
+@media all and (max-width: 410px) {
+  .navBarL {
     display: none;
   }
 }
 
-#navBarKat {
+.navBarKat {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40px;
-  padding: 0 12px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 12px;
 }
 
-#navBarKat img {
+@media all and (max-width: 572px) {
+  .navBarKat {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+.navBarKat img {
   width: 10px;
   margin-left: 3px;
 }
 
-#navBarR input {
+.navBarR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3px 0;
+}
+
+.navBarR input {
   border: none;
   border-radius: 3px;
   padding: 3px;
@@ -262,26 +287,19 @@ body {
   font-size: 0.85em;
 }
 
-#navBarR input:focus {
+.navBarR input:focus {
   background-color: #fafafa;
   -webkit-box-shadow: 0px 0px 7px 1px rgba(133, 24, 24, 0.75);
   box-shadow: 0px 0px 7px 1px rgba(133, 24, 24, 0.75);
 }
 
-@media all and (max-width: 572px) {
-  #navBarR {
+@media all and (max-width: 410px) {
+  .navBarR {
     display: none;
   }
 }
 
-#navBarMenu {
-  display: none;
-  padding: 4px 0;
-  text-align: center;
-  cursor: pointer;
-}
-
-#navBarMenu #navBarMenuImgContainer {
+.navBar .navBarInput {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,40 +308,49 @@ body {
           justify-content: center;
 }
 
-#navBarMenu img {
+.navBarMenu {
+  display: none;
+  padding: 4px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navBarMenu .navBarMenuImgContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navBarMenu img {
   height: 18px;
 }
 
-@media all and (max-width: 572px) {
-  #navBarMenu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+@media all and (max-width: 410px) {
+  .navBarMenu {
+    display: block;
     text-align: center;
   }
 }
 
 .navBarTiles {
-  height: 40px;
-  padding: 0 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 10px 12px;
+  text-align: center;
   cursor: pointer;
+}
+
+@media all and (max-width: 572px) {
+  .navBarTiles {
+    padding: 0 6px;
+  }
 }
 
 .navBarTiles:first-child {
   font-weight: 400;
   position: relative;
   padding: 0;
-  display: block;
 }
 
 .navBarTiles:hover {
@@ -332,7 +359,7 @@ body {
 
 .navBarTiles > ul {
   position: absolute;
-  background-color: #BE5252;
+  background-color: #be5252;
   width: 100%;
   display: none;
   border-bottom-left-radius: 4px;
@@ -353,4 +380,17 @@ body {
 
 .navBarTiles:hover > ul {
   display: block;
+}
+
+.navBarLRShow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }

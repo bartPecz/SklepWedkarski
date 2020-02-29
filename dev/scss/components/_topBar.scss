@@ -1,0 +1,80 @@
+@include back1;
+
+#topBar{
+    background-color: $gray1;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 28px;
+    white-space: nowrap;
+
+    @include margins($eLw);
+    @include responsiveWidth;
+
+    @media all and (max-width:$S){
+        font-size: 26px;
+    }
+
+    @media all and (max-width: $eS){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &L{
+        display: flex;
+        align-items: baseline;
+        color: $brown1;
+
+        @media all and (max-width:$S){
+            font-size: 18px;
+        }
+    }
+
+    &Img{
+        width: 56px;
+
+        @media all and (max-width:$S){
+            width: 36px;
+        }
+    }
+
+    &Text{
+        margin-left: 4px;
+    }
+
+    &Sklep{
+        font-weight: 700;
+    }
+
+    &Bez{
+        font-weight: 300;
+        font-style: italic;
+    }
+
+
+    &R{
+        display: flex;
+        align-items: baseline;
+        font-size: 0.54em;
+        color: $blue1;
+
+        @media all and (max-width: $S){
+            font-size: 0.50em;
+        }
+
+        @media all and (max-width: $eS){
+            flex-direction: column;
+            align-items: center;
+        }
+
+        *{
+            margin: 2px 4px;
+            padding: 2px;
+            cursor: pointer;
+        }
+    }
+
+    
+}
+

@@ -118,7 +118,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-console.log('czy działa');
+document.addEventListener('DOMContentLoaded', function () {
+  var navBar = document.querySelectorAll('.navBar > div');
+  navBar[0].addEventListener('click', function (e) {
+    navBar.forEach(function (el, i) {
+      if (i != 0) el.classList.toggle('navBarLRShow');else {
+        if (el.style.getPropertyValue('background-color') == 'rgb(187, 59, 59)') {
+          el.style.setProperty('background-color', 'rgb(190, 82, 82)');
+        } else {
+          el.style.setProperty('background-color', 'rgb(187, 59, 59)');
+        }
+      }
+    });
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 410) {
+      navBar.forEach(function (el, i) {
+        i != 0 ? el.classList.remove('navBarLRShow') : el.style.setProperty('background-color', 'rgb(190, 82, 82)');
+      });
+    }
+  });
+});
 },{}],"../../../../../Users/Bartek/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -147,7 +167,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65127" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56632" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

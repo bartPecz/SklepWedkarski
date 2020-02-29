@@ -16,19 +16,14 @@
 <body>
 
     <header>
-<?php
-        include('../viewsComponent/topBar.php');
-?>
+        <?php include('../viewsComponent/topBar.php');?>
         <nav>
-<?php
-            include('../viewsComponent/navBar.php'); 
-?>
+            <?php include('../viewsComponent/navBar.php');?> 
         </nav> 
     </header>
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero labore voluptatibus sed laudantium incidunt nesciunt veniam fuga perspiciatis, fugit blanditiis ex, officiis minus aliquam modi quod neque ad. Molestiae, repudiandae iure hic facilis dolorem illo laboriosam delectus error deserunt non laborum nulla quam accusantium. Ipsam incidunt distinctio consequatur praesentium modi libero rerum quidem maxime saepe, amet repellat culpa maiores molestiae vel, voluptatibus ducimus dolor fugit doloribus voluptatum corrupti voluptates debitis cumque vitae doloremque? Deleniti doloremque impedit error repellendus esse! Modi, voluptatem, repellendus nam unde voluptate reprehenderit expedita quos molestias voluptates, libero necessitatibus ducimus labore alias adipisci laborum at sequi tempore!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero labore voluptatibus sed laudantium incidunt nesciunt veniam fuga perspiciatis, fugit blanditiis ex, officiis minus aliquam modi quod neque ad. Molestiae, repudiandae iure hic facilis dolorem illo laboriosam delectus error deserunt non laborum nulla quam accusantium. 
+    
     <script src="../js/index.js" type="text/javascript"></script>
-
-
 </body>
 </html>
