@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "allowJs": true,
+    "esModuleInterop": true //y Gdy module jest ustawiony na commonjs to wtedy w przypadku imoprtowania es6 module (co chyba robi webpack domyślnie ) , które eksportje w posób domyślny export default powoduje przekazanie obiketku z zmienną default która zawiera eksport. żeby nie musięć wchodzić do obiektu użwya się tej opcji
+  },
+  "exclude" : [
+      "public",
+      "webpack.config.js"
+  ]
+}

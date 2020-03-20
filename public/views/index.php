@@ -1,5 +1,5 @@
 <?php
-    require_once './path.php';
+    require_once '../php/path.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +22,38 @@
         </nav> 
     </header>
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero labore voluptatibus sed laudantium incidunt nesciunt veniam fuga perspiciatis, fugit blanditiis ex, officiis minus aliquam modi quod neque ad. Molestiae, repudiandae iure hic facilis dolorem illo laboriosam delectus error deserunt non laborum nulla quam accusantium. 
+    <div class="slidingBar">
+        <div class="slidingBarOverScreen">
+            <?php 
+                $pathToCompanyLogos = '../img/companyLogos';
+             
+                foreach(new DirectoryIterator($pathToCompanyLogos) as $file){
+            
+                    if($file != '.' && $file != '..'){
+                        
+                        echo<<<end
+                            <div class="slidingBarTile">
+                                <img src="${pathToCompanyLogos}/${file}">
+                            </div>
+                        end;
+                    }
+                }
+
+                foreach(new DirectoryIterator($pathToCompanyLogos) as $file){
+            
+                    if($file != '.' && $file != '..'){
+                        
+                        echo<<<end
+                            <div class="slidingBarTile">
+                                <img src="${pathToCompanyLogos}/${file}">
+                            </div>
+                        end;
+                    }
+                }
+            ?>
+        </div>
+    </div>
     
-    <script src="../js/index.js" type="text/javascript"></script>
+    <script src="../js/bundle.js"></script>
 </body>
 </html>
