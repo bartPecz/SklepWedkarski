@@ -97,6 +97,24 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./navBarClick */ "./dev/ts/navBarClick.ts");
+__webpack_require__(/*! ./mainContentControler */ "./dev/ts/mainContentControler.ts");
+
+
+/***/ }),
+
+/***/ "./dev/ts/mainContentControler.ts":
+/*!****************************************!*\
+  !*** ./dev/ts/mainContentControler.ts ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('topBarL');
+    button.style.setProperty('background-color', 'red');
+    button.addEventListener('click', function () {
+    });
+});
 
 
 /***/ }),
