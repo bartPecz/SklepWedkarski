@@ -420,6 +420,17 @@ body {
           align-items: stretch;
 }
 
+#forward {
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+
+#backward {
+  position: absolute;
+  top: 0;
+}
+
 .gray2Border {
   border-bottom: 1px solid #707070;
 }
@@ -427,7 +438,45 @@ body {
 .mainContent {
   margin-left: auto;
   margin-right: auto;
-  width: 1180px;
+  width: 1140px;
+}
+
+.mainContentSlide {
+  width: 100%;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.mainContentBlocksOverScreen {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: 0;
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+
+.mainContentBlock {
+  width: 20%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+.mainContentBlockMiddle {
+  width: 85%;
+}
+
+.mainContentBlockMiddle img {
+  width: 100%;
 }
 
 @media all and (max-width: 1200px) {
@@ -438,51 +487,38 @@ body {
 
 @media all and (max-width: 992px) {
   .mainContent {
-    width: 748px;
+    width: 720px;
+  }
+  .mainContentBlock {
+    width: 25%;
   }
 }
 
 @media all and (max-width: 768px) {
   .mainContent {
-    width: 542px;
+    width: 540px;
+  }
+  .mainContentBlock {
+    width: 180px;
   }
 }
 
 @media all and (max-width: 572px) {
   .mainContent {
-    width: 95%;
+    width: 360px;
+  }
+  .mainContentBlock {
+    width: 50%;
   }
 }
 
-.mainContentSlide {
-  width: 100%;
-  overflow: hidden;
-  padding: 30px 0;
-}
-
-.mainContentSlide img {
-  width: 200px;
-}
-
-.mainContentBlocksOverScreen {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: translate(-25%);
-          transform: translate(-25%);
-}
-
-.mainContentBlock {
-  width: 25%;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+@media all and (max-width: 410px) {
+  .mainContent {
+    width: 180px;
+  }
+  .mainContentBlock {
+    width: 100%;
+  }
 }
 
 @-webkit-keyframes slidingBar {

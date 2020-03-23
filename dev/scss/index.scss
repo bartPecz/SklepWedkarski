@@ -3,6 +3,22 @@
 @import './components/_topBar.scss',
         './components/_navBar.scss';
 
+
+                        #forward{
+                            position: absolute;
+                            top: 0;
+                            left: 100px;
+                        }
+
+                        #backward{
+                            position: absolute;
+                            top: 0;
+                        }
+
+
+
+
+
 //MAIN CONTENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     .gray2Border{
         border-bottom: 1px solid $gray2;
@@ -10,33 +26,92 @@
     }
     
     .mainContent{
-        @include margins($eLw);
-        @include responsiveWidth;
+        @include margins($Size1);
 
         &Slide{
             width: 100%;
             overflow: hidden;
             padding: 30px 0;
-
-            & img{
-                width: 200px;
-            }
         }
 
         &BlocksOverScreen{
             width: 100%;
             display: flex;
-            transform: translate(-25%);
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
         }
 
         &Block{
-            width: 25%;
+            width: 20%;
             flex-shrink: 0;
             display: flex;
             justify-content: center;
-        }
+            padding: 0;
         
+            &Middle{
+                width: 85%;
+
+                & img{
+                    width: 100%;
+                }
+            }
+        }        
     }
+
+
+    @media all and (max-width: $Size1 + 60){
+
+        .mainContent{
+            width: $Size2;
+        }
+    }
+
+    @media all and (max-width: $Size2 + 32){
+
+        .mainContent{
+            width: $Size3;
+
+            &Block{
+                width: 25%;
+            }
+        }
+    }
+
+    @media all and (max-width: $Size3 + 48){
+
+        .mainContent{
+            width: $Size4;
+
+            &Block{
+                width: $Size4/3;
+            }
+        }
+    }
+
+    @media all and (max-width: $Size4 + 32){
+
+        .mainContent{
+            width: $Size5;
+
+            &Block{
+                width: 50%;
+            }
+        }
+    }
+
+    @media all and (max-width: $Size5 + 50){
+
+        .mainContent{
+            width: $Size6;
+
+            &Block{
+                width: 100%;
+            }
+        }
+    }
+
+
 
 //SLIDING BAR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

@@ -65,6 +65,16 @@
     <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero, eveniet nam, suscipit voluptates quo obcaecati odio est, omnis doloremque ad esse nisi recusandae eligendi. Illum ducimus nam laboriosam optio!
     </div>
+
+    <div id="forward">
+        Forward
+    </div>
+
+    <div id="backward">
+        Backward
+    </div>
+
+
     
     <script src="../js/bundle.js" ></script>
 </body>
