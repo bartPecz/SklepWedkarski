@@ -18,24 +18,30 @@
         background-color: $red1;
         width: 100%;
     }
-    
+}
+
+@mixin back3{
+    .background3{
+        background-color: $black1;
+        width: 100%;
+    }
 }
 
 @mixin responsiveWidth{
 
-    @media all and (max-width:$eL){
-        width: $Lw;
+    @media all and (max-width: $Size2rule){
+        width: $Size2;
     }
 
-    @media all and (max-width: $L){
-        width: $Mw
+    @media all and (max-width: $Size3rule){
+        width: $Size3
     }
 
-    @media all and (max-width: $M){
-        width: $Sw;
+    @media all and (max-width: $Size4rule){
+        width: $Size4;
     }
 
-    @media all and (max-width: $S){
+    @media all and (max-width: $Size5rule){
         width: 95%;
     }
 }

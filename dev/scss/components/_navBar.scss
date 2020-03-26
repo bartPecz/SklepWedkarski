@@ -7,14 +7,14 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    @include margins($eLw);
+    @include margins($Size1);
     @include responsiveWidth;
 
-    @media all and (max-width: $S){
+    @media all and (max-width: $Size5rule){
         font-size: 12px;
     }
 
-    @media all and (max-width: $eS){
+    @media all and (max-width: $Size6rule){
         display: block;
         margin: {
             left: 0;
@@ -26,7 +26,7 @@
     &L{
         display: flex;
         align-items: center;  
-        @media all and (max-width: $eS){
+        @media all and (max-width: $Size6rule){
             display: none;
         }
     }
@@ -39,7 +39,7 @@
         // height: 40px;            //zamiast paddingu u góry
         // padding: 0 12px;        //zamiast paddingu u góry
 
-        @media all and (max-width: $S){
+        @media all and (max-width: $Size5rule){
             padding: {
                 top: 10px;
                 bottom: 10px;
@@ -64,7 +64,7 @@
             font-weight: 300;
             font-size: 0.85em;
 
-            @media all and (max-width: $eS){
+            @media all and (max-width: $Size6rule){
                 &::placeholder {
                     text-align: center;
                 }
@@ -78,7 +78,7 @@
                 }                
         }
 
-        @media all and (max-width: $eS){
+        @media all and (max-width: $Size6rule){
             display: none;
         }
 
@@ -104,7 +104,7 @@
             height: 18px;
         }
 
-        @media all and (max-width: $eS){
+        @media all and (max-width: $Size6rule){
             display: block;
             text-align: center;
         }
@@ -121,7 +121,7 @@
     text-align: center;
     cursor: pointer;
 
-    @media all and (max-width: $S){
+    @media all and (max-width: $Size5rule){
         padding: 10px 6px;        
     }
 
@@ -164,7 +164,7 @@
     &:hover > ul{
         display: block;
 
-        @media all and (max-width: $eS){
+        @media all and (max-width: $Size6rule){
             position: static;
         }
     

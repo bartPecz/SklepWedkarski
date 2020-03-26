@@ -51,7 +51,7 @@ body {
   white-space: nowrap;
   margin-left: auto;
   margin-right: auto;
-  width: 1180px;
+  width: 1140px;
 }
 
 @media all and (max-width: 1200px) {
@@ -62,13 +62,13 @@ body {
 
 @media all and (max-width: 992px) {
   #topBar {
-    width: 748px;
+    width: 720px;
   }
 }
 
 @media all and (max-width: 768px) {
   #topBar {
-    width: 542px;
+    width: 540px;
   }
 }
 
@@ -190,7 +190,7 @@ body {
   color: white;
   margin-left: auto;
   margin-right: auto;
-  width: 1180px;
+  width: 1140px;
 }
 
 @media all and (max-width: 1200px) {
@@ -201,13 +201,13 @@ body {
 
 @media all and (max-width: 992px) {
   .navBar {
-    width: 748px;
+    width: 720px;
   }
 }
 
 @media all and (max-width: 768px) {
   .navBar {
-    width: 542px;
+    width: 540px;
   }
 }
 
@@ -421,13 +421,13 @@ body {
 }
 
 #forward {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100px;
 }
 
 #backward {
-  position: absolute;
+  position: fixed;
   top: 0;
 }
 
@@ -454,8 +454,8 @@ body {
   display: flex;
   position: relative;
   left: 0;
-  -webkit-transition: left 0.5s ease;
-  transition: left 0.5s ease;
+  -webkit-transition: left 0.8s ease;
+  transition: left 0.8s ease;
 }
 
 .mainContentBlock {
@@ -521,164 +521,25 @@ body {
   }
 }
 
-@-webkit-keyframes slidingBar {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  2% {
-    -webkit-transform: translate(-236px);
-            transform: translate(-236px);
-  }
-  16% {
-    -webkit-transform: translate(-236px);
-            transform: translate(-236px);
-  }
-  18% {
-    -webkit-transform: translate(-472px);
-            transform: translate(-472px);
-  }
-  32% {
-    -webkit-transform: translate(-472px);
-            transform: translate(-472px);
-  }
-  34% {
-    -webkit-transform: translate(-708px);
-            transform: translate(-708px);
-  }
-  48% {
-    -webkit-transform: translate(-708px);
-            transform: translate(-708px);
-  }
-  50% {
-    -webkit-transform: translate(-944px);
-            transform: translate(-944px);
-  }
-  64% {
-    -webkit-transform: translate(-944px);
-            transform: translate(-944px);
-  }
-  66% {
-    -webkit-transform: translate(-1180px);
-            transform: translate(-1180px);
-  }
-  80% {
-    -webkit-transform: translate(-1180px);
-            transform: translate(-1180px);
-  }
-  82% {
-    -webkit-transform: translate(-1416px);
-            transform: translate(-1416px);
-  }
-  100% {
-    -webkit-transform: translate(-1416px);
-            transform: translate(-1416px);
-  }
-}
-
-@keyframes slidingBar {
-  0% {
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
-  2% {
-    -webkit-transform: translate(-236px);
-            transform: translate(-236px);
-  }
-  16% {
-    -webkit-transform: translate(-236px);
-            transform: translate(-236px);
-  }
-  18% {
-    -webkit-transform: translate(-472px);
-            transform: translate(-472px);
-  }
-  32% {
-    -webkit-transform: translate(-472px);
-            transform: translate(-472px);
-  }
-  34% {
-    -webkit-transform: translate(-708px);
-            transform: translate(-708px);
-  }
-  48% {
-    -webkit-transform: translate(-708px);
-            transform: translate(-708px);
-  }
-  50% {
-    -webkit-transform: translate(-944px);
-            transform: translate(-944px);
-  }
-  64% {
-    -webkit-transform: translate(-944px);
-            transform: translate(-944px);
-  }
-  66% {
-    -webkit-transform: translate(-1180px);
-            transform: translate(-1180px);
-  }
-  80% {
-    -webkit-transform: translate(-1180px);
-            transform: translate(-1180px);
-  }
-  82% {
-    -webkit-transform: translate(-1416px);
-            transform: translate(-1416px);
-  }
-  100% {
-    -webkit-transform: translate(-1416px);
-            transform: translate(-1416px);
-  }
-}
-
 .slidingBar {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1180px;
   overflow: hidden;
-}
-
-@media all and (max-width: 1200px) {
-  .slidingBar {
-    width: 960px;
-  }
-}
-
-@media all and (max-width: 992px) {
-  .slidingBar {
-    width: 748px;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .slidingBar {
-    width: 542px;
-  }
-}
-
-@media all and (max-width: 572px) {
-  .slidingBar {
-    width: 95%;
-  }
 }
 
 .slidingBarOverScreen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  -webkit-animation-name: slidingBar;
-          animation-name: slidingBar;
-  -webkit-animation-duration: 70s;
-          animation-duration: 70s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  left: 0;
+  -webkit-transition: left 1.5s ease;
+  transition: left 1.5s ease;
 }
 
 .slidingBarTile {
-  width: 236px;
+  width: 20%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: -webkit-box;
@@ -687,21 +548,146 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.slidingBar img {
-  width: 40%;
+.slidingBarTile img {
+  width: 70px;
+}
+
+@media all and (max-width: 1200px) {
+  .slidingBarTile {
+    width: 25%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .slidingBarTile {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 410px) {
+  .slidingBarTile {
+    width: 100%;
+  }
 }
 
 .violet {
   background-color: #956EFF;
-  padding-top: 30px;
+  padding-top: 14px;
+  width: 100%;
 }
 
 .rodPicture {
-  background: url("../img/rodPicture.png");
+  background-image: url("../img/rodPicture.png");
+  background-size: cover;
+  background-position: center;
   width: 100%;
+  padding-bottom: 20%;
+}
+
+.textContentBlock {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1140px;
+  font-size: 26px;
+  padding: 30px 0;
+}
+
+@media all and (max-width: 1200px) {
+  .textContentBlock {
+    width: 960px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .textContentBlock {
+    width: 720px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .textContentBlock {
+    width: 540px;
+  }
+}
+
+@media all and (max-width: 572px) {
+  .textContentBlock {
+    width: 95%;
+  }
+}
+
+.textContentBlockTitle {
+  color: #6A49C4;
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+.textContentBlockText {
+  font-size: 0.84em;
+  color: #956EFF;
+  font-weight: 300;
+}
+
+.textContentBlock .w100 {
+  background-color: #6A49C4;
+  color: white;
+  font-weight: 400;
+  padding: 2px;
+  border-radius: 1px;
+}
+
+.background3 {
+  background-color: #4B4B4B;
+}
+
+.footer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1140px;
+  padding: 40px 0;
+  font-size: 30px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media all and (max-width: 1200px) {
+  .footer {
+    width: 960px;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .footer {
+    width: 720px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .footer {
+    width: 540px;
+  }
+}
+
+@media all and (max-width: 572px) {
+  .footer {
+    width: 95%;
+  }
+}
+
+.footer .shopText, .footer .categoriesText {
+  font-size: 0.55em;
+  font-weight: 300;
+  padding-top: 14px;
+}
+
+.footer .shopText div, .footer .categoriesText div {
+  padding: 4px 0;
+  cursor: pointer;
 }

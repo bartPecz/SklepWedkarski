@@ -86,10 +86,40 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./dev/ts/SliderControler.ts":
-/*!***********************************!*\
-  !*** ./dev/ts/SliderControler.ts ***!
-  \***********************************/
+/***/ "./dev/ts/Sliders/MainContentSlider.ts":
+/*!*********************************************!*\
+  !*** ./dev/ts/Sliders/MainContentSlider.ts ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const SliderControler_1 = __importDefault(__webpack_require__(/*! ./SliderControler */ "./dev/ts/Sliders/SliderControler.ts"));
+class MainContentSlider extends SliderControler_1.default {
+    constructor(imgFrame) {
+        super(imgFrame);
+    }
+    setStepsNumber() {
+        console.log(this.position);
+        if (0 > this.position && this.position > -this.imgFrameWidth)
+            return this.howManyPass();
+        return this.countOfVisibleParts;
+    }
+}
+exports.default = MainContentSlider;
+
+
+/***/ }),
+
+/***/ "./dev/ts/Sliders/SliderControler.ts":
+/*!*******************************************!*\
+  !*** ./dev/ts/Sliders/SliderControler.ts ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -99,8 +129,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class SliderControler {
     constructor(imgFrame) {
         this.pass = 0;
+        this.isAnimate = false;
         this.imgFrame = imgFrame;
         this.onResize();
+        this.animationEnd();
     }
     get position() {
         return parseInt(window.getComputedStyle(this.imgFrame).left);
@@ -111,35 +143,139 @@ class SliderControler {
     get blockWidth() {
         return parseInt(window.getComputedStyle(this.imgFrame.children[0]).width);
     }
+    get imgFrameWidth() {
+        return parseInt(window.getComputedStyle(this.imgFrame).width);
+    }
+    set imgFrameWidth(newWidth) {
+        this.imgFrame.style.width = newWidth + 'px';
+    }
+    get countOfVisibleParts() {
+        return this.imgFrameWidth / this.blockWidth;
+    }
     onResize() {
         window.addEventListener('resize', () => {
-            console.log(this.pass);
             this.position = -1 * this.pass * this.blockWidth;
+            this.imgFrame.style.transitionProperty = 'none';
+            this.isAnimate = false;
+            setTimeout(() => {
+                this.imgFrame.style.transitionProperty = null;
+            });
+        });
+    }
+    animationEnd() {
+        this.imgFrame.addEventListener('transitionend', () => {
+            this.isAnimate = false;
+            this.howManyPass();
         });
     }
     howManyPass() {
-        this.pass = (this.position === 0) ? 0 : Math.abs(this.position / this.blockWidth);
+        return this.pass = (this.position === 0) ? 0 : Math.round(Math.abs(this.position / this.blockWidth));
     }
-    onClick(button, fn) {
-        button.addEventListener('click', () => {
-            fn();
-        });
+    // onClick(button: HTMLElement, fn: Function) {
+    //     button.addEventListener('click', () => {
+    //         fn();
+    //     });
+    // }
+    onClick(backward, forward) {
+        const map = new Map([
+            [backward, this.backward],
+            [forward, this.forward]
+        ]);
+        for (const [key, value] of map.entries()) {
+            key.addEventListener('click', () => {
+                value.call(this);
+            });
+        }
     }
-    forward(button) {
-        this.onClick(button, () => {
-            this.position = this.position - this.blockWidth;
-            this.howManyPass();
-        });
+    setStepsNumber() {
+        return 1;
     }
-    backward(button) {
-        this.onClick(button, () => {
-            this.position = this.position + this.blockWidth;
-            this.howManyPass();
-            // console.log(this.position + this.blockWidth);
-        });
+    // forward(button: HTMLElement): SliderControler {
+    //     this.onClick(button, () => {
+    //         if(!this.isAnimate){
+    //             this.isAnimate = true;
+    //             this.position = this.position - this.setStepsNumber()*this.blockWidth;
+    //         }
+    //     });
+    //     return this;
+    // }
+    // backward(button: HTMLElement): SliderControler {
+    //     this.onClick(button, () => {
+    //         if(this.position === 0){
+    //             return ;
+    //         } 
+    //         if(!this.isAnimate) {
+    //             this.isAnimate = true;
+    //             this.position = this.position + this.setStepsNumber()*this.blockWidth;
+    //         }
+    //     });
+    //     return this;
+    // }
+    forward() {
+        if (!this.isAnimate) {
+            this.isAnimate = true;
+            this.position = this.position - this.setStepsNumber() * this.blockWidth;
+        }
+    }
+    backward() {
+        if (this.position === 0) {
+            return;
+        }
+        if (!this.isAnimate) {
+            this.isAnimate = true;
+            this.position = this.position + this.setStepsNumber() * this.blockWidth;
+        }
     }
 }
 exports.default = SliderControler;
+
+
+/***/ }),
+
+/***/ "./dev/ts/Sliders/SlidingBarSlider.ts":
+/*!********************************************!*\
+  !*** ./dev/ts/Sliders/SlidingBarSlider.ts ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const SliderControler_1 = __importDefault(__webpack_require__(/*! ./SliderControler */ "./dev/ts/Sliders/SliderControler.ts"));
+class SlidingBarSlider extends SliderControler_1.default {
+    constructor(imgFrame) {
+        super(imgFrame);
+        this.onresize2();
+        this.setLoop();
+    }
+    onresize2() {
+        window.addEventListener('resize', () => {
+            this.imgFrameWidth = Math.round(window.innerWidth / 60) * 60;
+        });
+    }
+    setLoop() {
+        console.log(this.pass);
+        if (this.pass >= 6) {
+            this.imgFrame.style.transitionProperty = 'none';
+            this.position = 0;
+            this.isAnimate = false;
+            this.pass = 0;
+            setTimeout(() => {
+                this.imgFrame.style.transitionProperty = 'left';
+            }, 0);
+        }
+        else {
+            this.forward();
+        }
+        console.log('pupcia');
+        setTimeout(this.setLoop.bind(this), 8000);
+    }
+}
+exports.default = SlidingBarSlider;
 
 
 /***/ }),
@@ -158,17 +294,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! ./navBarClick */ "./dev/ts/navBarClick.ts");
-const SliderControler_1 = __importDefault(__webpack_require__(/*! ./SliderControler */ "./dev/ts/SliderControler.ts"));
+const MainContentSlider_1 = __importDefault(__webpack_require__(/*! ./Sliders/MainContentSlider */ "./dev/ts/Sliders/MainContentSlider.ts"));
+const SlidingBarSlider_1 = __importDefault(__webpack_require__(/*! ./Sliders/SlidingBarSlider */ "./dev/ts/Sliders/SlidingBarSlider.ts"));
+__webpack_require__(/*! ./oddInTextContent */ "./dev/ts/oddInTextContent.ts");
 document.addEventListener('DOMContentLoaded', () => {
     const forward = document.getElementById('forward');
     const backward = document.getElementById('backward');
     forward.style.setProperty('background-color', 'red');
     backward.style.setProperty('background-color', 'red');
     const imgFrames = document.getElementsByClassName('mainContentBlocksOverScreen');
-    const imgFrame = imgFrames[0];
-    const slider = new SliderControler_1.default(imgFrame);
-    slider.forward(forward);
-    slider.backward(backward);
+    const sliderd = new MainContentSlider_1.default(imgFrames[0]);
+    sliderd.onClick(backward, forward);
+    // for(const imgFrame of imgFrames){
+    //     const slider = new MainContentSlider(imgFrame);
+    //     slider.onClick(backward, forward);
+    //     console.dir(slider);
+    // };
+    const sliderFrame = document.getElementsByClassName('slidingBarOverScreen')[0];
+    const slider = new SlidingBarSlider_1.default(sliderFrame);
 });
 
 
@@ -207,6 +350,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+});
+
+
+/***/ }),
+
+/***/ "./dev/ts/oddInTextContent.ts":
+/*!************************************!*\
+  !*** ./dev/ts/oddInTextContent.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const textContentBlock = document.querySelectorAll('.textContentBlock');
+textContentBlock.forEach((el, i) => {
+    if (i % 2 != 0) {
+        el.style.setProperty('text-align', 'right');
+    }
 });
 
 

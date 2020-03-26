@@ -9,14 +9,14 @@
     font-size: 28px;
     white-space: nowrap;
 
-    @include margins($eLw);
+    @include margins($Size1);
     @include responsiveWidth;
 
-    @media all and (max-width:$S){
+    @media all and (max-width:$Size5rule){
         font-size: 26px;
     }
 
-    @media all and (max-width: $eS){
+    @media all and (max-width: $Size6rule){
         flex-direction: column;
         align-items: center;
     }
@@ -26,7 +26,7 @@
         align-items: baseline;
         color: $brown1;
 
-        @media all and (max-width:$S){
+        @media all and (max-width:$Size5rule){
             font-size: 18px;
         }
     }
@@ -34,7 +34,7 @@
     &Img{
         width: 56px;
 
-        @media all and (max-width:$S){
+        @media all and (max-width:$Size5rule){
             width: 36px;
         }
     }
@@ -59,11 +59,11 @@
         font-size: 0.54em;
         color: $blue1;
 
-        @media all and (max-width: $S){
+        @media all and (max-width: $Size5rule){
             font-size: 0.50em;
         }
 
-        @media all and (max-width: $eS){
+        @media all and (max-width: $Size6rule){
             flex-direction: column;
             align-items: center;
         }

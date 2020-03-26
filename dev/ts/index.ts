@@ -1,5 +1,7 @@
 import './navBarClick';
-import SliderControler from "./SliderControler";
+import MainContentSlider from "./Sliders/MainContentSlider";
+import SlidingBarSlider from './Sliders/SlidingBarSlider';
+import './oddInTextContent';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -11,15 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
     forward.style.setProperty('background-color', 'red');
     backward.style.setProperty('background-color', 'red');
 
+    const imgFrames = document.getElementsByClassName('mainContentBlocksOverScreen') as HTMLCollectionOf<HTMLElement>;
 
+    const sliderd = new MainContentSlider(imgFrames[0]);
 
-    const imgFrames = document.getElementsByClassName('mainContentBlocksOverScreen') as HTMLCollectionOf<HTMLElement>
+    sliderd.onClick(backward, forward);
 
-    const imgFrame = imgFrames[0];
+    // for(const imgFrame of imgFrames){
 
-    const slider = new SliderControler(imgFrame);
+    //     const slider = new MainContentSlider(imgFrame);
 
-    slider.forward(forward);
-    slider.backward(backward);
+    //     slider.onClick(backward, forward);
+
+    //     console.dir(slider);
+    // };
+
+    const sliderFrame = document.getElementsByClassName('slidingBarOverScreen')[0] as HTMLElement;
+
+    const slider = new SlidingBarSlider(sliderFrame);
+
 });
+
 

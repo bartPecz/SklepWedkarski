@@ -15,6 +15,14 @@
 
 <body>
 
+    <div id="forward">
+        Forward
+    </div>
+
+    <div id="backward">
+        Backward
+    </div>
+
     <header>
         <?php include('../viewsComponent/topBar.php');?>
         <nav>
@@ -54,26 +62,85 @@
     </div>
 
     <div class="violet">
-        <img src="../img/rodPicture.png" class="rodPicture" alt="">
+        <div class="rodPicture">dsds</div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="textContent">
+        <div>
+            <div class="textContentBlock">
+                <div class="textContentBlockTitle">
+                    Jesteśmy gotowi na twoje zamówienie
+                </div>
+                <div class="textContentBlockText">
+                    Naszym priorytetem jest dostarczenie sprzętu spełniającego wszystkie 
+                    twoje wymagania, pozwalającego na łowienie jeszcze większych okazów. 
+                </div>
+            </div>
+        </div>
+        <div class="background1">
+            <div class="textContentBlock">
+                <div class="textContentBlockTitle">
+                    Pasja do wędkarstwa oraz profesjonalizm
+                </div>
+                <div class="textContentBlockText">
+                    Przyświeca nam zasada "Klient ma zawsze rację".  Szanujemy twoje zdanie i w razie wszelkich wątpliwości  jesteśmy  do  dyspozycji. 
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="textContentBlock">
+                <div class="textContentBlockTitle">
+                    Sprawdzony sprzęt
+                </div>
+                <div class="textContentBlockText">
+                    Oferowany sprzęt jest na co dzień używany przez nas samych, dlatego
+                    możemy go polecić <span class="w100">w 100%.
 
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero, eveniet nam, suscipit voluptates quo obcaecati odio est, omnis doloremque ad esse nisi recusandae eligendi. Illum ducimus nam laboriosam optio!
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="forward">
-        Forward
-    </div>
-
-    <div id="backward">
-        Backward
-    </div>
-
+    
+    <footer>
+        <div class="background3">
+            <div class="footer">
+                <div class="shop">
+                        <div class="shopTitle">
+                            Sklep
+                        </div>
+                        <div class="shopText">
+                            <div>Dane kontaktowe</div>
+                            <div>Współpraca</div>
+                            <div>Promocje</div>
+                            <div>Regulamin</div>
+                        </div>
+                </div>
+                <div clas="categories">
+                        <div class="categoriesTitle">
+                            Kategorie
+                        </div>
+                        <div class="categoriesText">
+                                <div>Wędki</div>
+                                <div>Kołowrotki</div>
+                                <div>Przynęty</div>
+                        </div>
+                </div>
+                <div class="abouUs">
+                    O nas
+                </div>
+                <div class="icons">
+                    <div class="phone">
+                        <img src="../img/phone.jpg">
+                    </div>
+                    <div class="addres">
+                        <img src="../img/addres.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 
     
     <script src="../js/bundle.js" ></script>
