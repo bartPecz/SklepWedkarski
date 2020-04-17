@@ -31,7 +31,7 @@ echo<<<end
 
             <div class="navBarR">
                 <div class="navBarInput">  
-                    <form action="${local}search.php" method="get">
+                    <form action="${ROOT}search.php" method="get">
                         <input type="text" name="search" placeholder="szukaj...">
                     </form>
                 </div>

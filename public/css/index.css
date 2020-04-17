@@ -112,13 +112,19 @@ body {
   }
 }
 
+@media all and (max-width: 410px) {
+  #topBarL {
+    font-size: 26px;
+  }
+}
+
 #topBarImg {
   width: 56px;
 }
 
-@media all and (max-width: 572px) {
+@media all and (max-width: 410px) {
   #topBarImg {
-    width: 36px;
+    width: 80px;
   }
 }
 
@@ -148,12 +154,13 @@ body {
 
 @media all and (max-width: 572px) {
   #topBarR {
-    font-size: 0.50em;
+    font-size: 0.58em;
   }
 }
 
 @media all and (max-width: 410px) {
   #topBarR {
+    font-size: 0.9em;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -168,6 +175,12 @@ body {
   margin: 2px 4px;
   padding: 2px;
   cursor: pointer;
+}
+
+@media all and (max-width: 572px) {
+  #topBarR * {
+    margin: 10px 0;
+  }
 }
 
 .background2 {
@@ -343,7 +356,7 @@ body {
 }
 
 .navBarMenu img {
-  height: 18px;
+  height: 30px;
 }
 
 @media all and (max-width: 410px) {
@@ -379,10 +392,25 @@ body {
   position: absolute;
   background-color: #be5252;
   width: 100%;
-  display: none;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   z-index: 100;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  visibility: hidden;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+@media all and (max-width: 410px) {
+  .navBarTiles > ul {
+    display: none;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    visibility: visible;
+  }
 }
 
 .navBarTiles > ul > li {
@@ -398,13 +426,9 @@ body {
 }
 
 .navBarTiles:hover > ul {
-  display: block;
-}
-
-@media all and (max-width: 410px) {
-  .navBarTiles:hover > ul {
-    position: static;
-  }
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  visibility: visible;
 }
 
 .navBarLRShow {
@@ -418,6 +442,18 @@ body {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+.loginBox {
+  position: fixed;
+  height: 20%;
+  width: 50%;
+  left: 25%;
+  top: 40%;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #forward {
@@ -441,6 +477,10 @@ body {
   width: 1140px;
 }
 
+.mainContentWrapper {
+  position: relative;
+}
+
 .mainContentSlide {
   width: 100%;
   overflow: hidden;
@@ -454,12 +494,12 @@ body {
   display: flex;
   position: relative;
   left: 0;
-  -webkit-transition: left 0.8s ease;
-  transition: left 0.8s ease;
+  -webkit-transition: left 0.9s ease-out;
+  transition: left 0.9s ease-out;
 }
 
 .mainContentBlock {
-  width: 20%;
+  width: 25%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: -webkit-box;
@@ -472,11 +512,50 @@ body {
 }
 
 .mainContentBlockMiddle {
-  width: 85%;
+  width: 92%;
+}
+
+.mainContentBlockMiddle .imgScalableHeight {
+  position: relative;
+  padding-bottom: 73%;
 }
 
 .mainContentBlockMiddle img {
+  position: absolute;
   width: 100%;
+  height: 100%;
+  opacity: 0.97;
+  border-radius: 2px;
+}
+
+.mainContentButtons {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.mainContent .buttonForward, .mainContent .buttonBackward {
+  position: absolute;
+  top: 40%;
+  opacity: 0.85;
+}
+
+.mainContent .buttonForward img, .mainContent .buttonBackward img {
+  width: 22px;
+}
+
+.mainContent .buttonForward {
+  right: -13px;
+}
+
+.mainContent .buttonBackward {
+  left: -13px;
+}
+
+.mainContent .buttonBackward img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 @media all and (max-width: 1200px) {
@@ -490,7 +569,7 @@ body {
     width: 720px;
   }
   .mainContentBlock {
-    width: 25%;
+    width: 240px;
   }
 }
 
@@ -499,7 +578,7 @@ body {
     width: 540px;
   }
   .mainContentBlock {
-    width: 180px;
+    width: 50%;
   }
 }
 
@@ -507,14 +586,11 @@ body {
   .mainContent {
     width: 360px;
   }
-  .mainContentBlock {
-    width: 50%;
-  }
 }
 
 @media all and (max-width: 410px) {
   .mainContent {
-    width: 180px;
+    width: 240px;
   }
   .mainContentBlock {
     width: 100%;
@@ -583,7 +659,12 @@ body {
   background-size: cover;
   background-position: center;
   width: 100%;
-  padding-bottom: 20%;
+  padding-bottom: 18%;
+  position: relative;
+}
+
+.rodPicture div {
+  position: absolute;
 }
 
 .textContentBlock {
@@ -591,7 +672,7 @@ body {
   margin-right: auto;
   width: 1140px;
   font-size: 26px;
-  padding: 30px 0;
+  padding: 36px 0;
 }
 
 @media all and (max-width: 1200px) {
@@ -621,7 +702,7 @@ body {
 .textContentBlockTitle {
   color: #6A49C4;
   font-style: italic;
-  padding-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 .textContentBlockText {
@@ -638,8 +719,34 @@ body {
   border-radius: 1px;
 }
 
+@media all and (max-width: 768px) {
+  .textContentBlock {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 572px) {
+  .textContentBlock {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .textContentBlockTitle {
+    text-align: center;
+    padding-bottom: 4px;
+  }
+  .textContentBlockText {
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 410px) {
+  .textContentBlock {
+    font-size: 16px;
+  }
+}
+
 .background3 {
-  background-color: #4B4B4B;
+  background-color: #383737;
 }
 
 .footer {
@@ -690,4 +797,8 @@ body {
 .footer .shopText div, .footer .categoriesText div {
   padding: 4px 0;
   cursor: pointer;
+}
+
+.hide {
+  display: none;
 }

@@ -1,37 +1,53 @@
-import './navBarClick';
+import './mainContent/mainContent';
+
+import ROOT from './ROOT';
+import './navBar/navBarClick';
 import MainContentSlider from "./Sliders/MainContentSlider";
 import SlidingBarSlider from './Sliders/SlidingBarSlider';
-import './oddInTextContent';
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const forward = document.getElementById('forward');
-
-    const backward = document.getElementById('backward');
+import './textContent/oddInTextContent';
+import './login/login';
+import './testAPI';
 
 
-    forward.style.setProperty('background-color', 'red');
-    backward.style.setProperty('background-color', 'red');
+// const forward = document.getElementById('forward');
 
-    const imgFrames = document.getElementsByClassName('mainContentBlocksOverScreen') as HTMLCollectionOf<HTMLElement>;
+// const backward = document.getElementById('backward');
 
-    const sliderd = new MainContentSlider(imgFrames[0]);
+// forward.style.setProperty('background-color', 'red');
+// backward.style.setProperty('background-color', 'red');
 
-    sliderd.onClick(backward, forward);
+// const imgFrames = document.getElementsByClassName('mainContentBlocksOverScreen') as HTMLCollectionOf<HTMLElement>;
 
-    // for(const imgFrame of imgFrames){
+const wrappers = document.getElementsByClassName('mainContentWrapper') as HTMLCollectionOf<HTMLElement>;
 
-    //     const slider = new MainContentSlider(imgFrame);
 
-    //     slider.onClick(backward, forward);
 
-    //     console.dir(slider);
-    // };
+// for(const imgFrame of imgFrames) {
 
-    const sliderFrame = document.getElementsByClassName('slidingBarOverScreen')[0] as HTMLElement;
+//     const forward = imgFrame.parentElement.querySelector('.buttonForward') as HTMLElement;
+//     const backward = imgFrame.parentElement.querySelector('.buttonBackward') as HTMLElement;
 
-    const slider = new SlidingBarSlider(sliderFrame);
+//     const mainContentSlider = new MainContentSlider(imgFrame);
+//     mainContentSlider.onClick(backward, forward);
+// }
 
-});
+for(const wrapper of wrappers) {
+
+    const forward = wrapper.getElementsByClassName('buttonForward')[0] as HTMLElement;
+    const backward = wrapper.getElementsByClassName('buttonBackward')[0] as HTMLElement;
+
+    const imgFrame = wrapper.getElementsByClassName('mainContentBlocksOverScreen')[0] as HTMLElement;
+
+    const mainContentSlider = new MainContentSlider(imgFrame);
+    mainContentSlider.onClick(backward, forward);
+}
+
+
+
+const sliderFrame = document.getElementsByClassName('slidingBarOverScreen')[0] as HTMLElement;
+
+const slider = new SlidingBarSlider(sliderFrame);
+
+slider.start();
 
 

@@ -8,7 +8,7 @@ module.exports = {
     },
     watch: true,
     mode: 'development',
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     module:{
         rules: [
             {

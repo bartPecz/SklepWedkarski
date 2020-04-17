@@ -1,18 +1,20 @@
 <?php
-$age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
 
+$myArr = array("John", "Mary", "Peter", "Sally");
 
-class SamochodOpel {
-    public $marka = 'Opel';
-    public $model;
-    public $rokProdukcji = 2017;
-  }
+$myJSON = json_encode($myArr);
 
-    
+echo $myJSON;
 
+// class obj {
+//   public $name  = 'Bartek';
 
-echo json_encode($age);
+// }
 
- echo $im;
+// new Object();
+
+// $myJSON = json_encode(new obj());
+
+// echo $myJSON;
 
 ?>

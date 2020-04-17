@@ -1,5 +1,7 @@
 <?php
-    require_once '../php/path.php';
+    $PUBLIC = '../';
+    require_once $PUBLIC.'app/ROOT.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -15,25 +17,25 @@
 
 <body>
 
-    <div id="forward">
+    <!-- <div id="forward">
         Forward
     </div>
 
     <div id="backward">
         Backward
-    </div>
+    </div> -->
 
     <header>
-        <?php include('../viewsComponent/topBar.php');?>
+        <?php include $PUBLIC.'viewsComponent/topBar.php';?>
         <nav>
-            <?php include('../viewsComponent/navBar.php');?> 
+            <?php include $PUBLIC.'viewsComponent/navBar.php';?> 
         </nav> 
     </header>
 
     <div class="background1">
         <div class="gray2Border">
             <div class="mainContent">
-                <?php include('../viewsComponent/mainContentBlocks.php');?>
+                <?php include $PUBLIC.'app/build/mainContents.php';?>
             </div>
         </div>
     </div>
@@ -62,7 +64,13 @@
     </div>
 
     <div class="violet">
-        <div class="rodPicture">dsds</div>
+        <div class="rodPicture">
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aliquid ducimus alias. Optio, quas itaque incidunt exercitationem sint dicta reiciendis totam fugiat. Voluptatum neque officiis provident ex iste, sit voluptates?
+                Iure, nostrum rerum non velit excepturi ipsam dolores modi. 
+            </div>
+            
+        </div>
     </div>
 
     <div class="textContent">

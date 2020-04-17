@@ -29,13 +29,18 @@
         @media all and (max-width:$Size5rule){
             font-size: 18px;
         }
+
+        @media all and (max-width:$Size6rule){
+            font-size: 26px;
+        }
     }
 
     &Img{
         width: 56px;
 
-        @media all and (max-width:$Size5rule){
-            width: 36px;
+        @media all and (max-width:$Size6rule){
+            // width: 36px;
+            width: 80px;
         }
     }
 
@@ -60,10 +65,11 @@
         color: $blue1;
 
         @media all and (max-width: $Size5rule){
-            font-size: 0.50em;
+            font-size: 0.58em;
         }
 
         @media all and (max-width: $Size6rule){
+            font-size: 0.9em;
             flex-direction: column;
             align-items: center;
         }
@@ -72,6 +78,10 @@
             margin: 2px 4px;
             padding: 2px;
             cursor: pointer;
+
+            @media all and (max-width:$Size5rule) {
+                margin: 10px 0;
+            }
         }
     }
 
