@@ -1,68 +1,55 @@
-const loginBoxParent = document.createElement('div');
+import { FormController } from './FormController';
+
+const loginBoxContainer = document.createElement('div');
 
 const loginbBox = 
 `           
-            <input type="text" placeholder="login" name="login">
-            <input type="password" placeholder="hasło" name="password">
+    <div class="loginBoxMiddle">
 
-            <button class="loginButton">Zaloguj</button>
+        <div></div>
+        <div class="Title">Zaloguj się do sklepu</div>
+
+        <input type="text" placeholder="login" name="login">
+        <input type="password" placeholder="hasło" name="hasło">
+
+        <button class="loginButton">Zaloguj</button>
+    </div>
 `;
 
 
-loginBoxParent.innerHTML = loginbBox;
-loginBoxParent.classList.add('loginBox');
-loginBoxParent.classList.add('hide');
+loginBoxContainer.innerHTML = loginbBox;
+loginBoxContainer.classList.add('loginBoxContainer', );  //hide classa trzeba dać
 
+document.body.appendChild(loginBoxContainer);
 
-document.body.appendChild(loginBoxParent);
+const loginBoxMiddle = loginBoxContainer.children[0];
 
 document.querySelector('#topBarLog').addEventListener('click', function() {
 
-    loginBoxParent.classList.toggle('hide');
+    loginBoxContainer.classList.toggle('hide');
 });
 
+const inputs = loginBoxMiddle.getElementsByTagName('input');
 
-interface InputsToWatch {
-    name?: string;
-    type?: string;
-    value?: string;
-}
+new FormController(inputs).launch();
 
-let inputsToWatch: Array<InputsToWatch> = [{}];
-
-for(const [index, input] of [...loginBoxParent.children].entries() as IterableIterator<[number, HTMLInputElement]>) {
-
-    if(input.type != 'text' && input.type != 'password') continue;
-
-    inputsToWatch = [
-        ...inputsToWatch,
-        {
-            name: input.name,
-            type: input.type,
-            value: input.value
-        }
-    ];
-
-    input.addEventListener('input', function monitoringChanges({target}: {target: any}) {
-
-        inputsToWatch[index].name = target.name;
-        inputsToWatch[index].type = target.type;
-        inputsToWatch[index].value = target.value;
-    });
-}
-
-document.querySelector('.loginBox .loginButton').addEventListener('click', function submit() {
-
-    console.log('submit');
-
-    fetch('http://localhost/Wedeczki/pulic/views/app/database/test.php', {
-        method: 'post',
-        body: JSON.stringify(inputsToWatch)
-    })
-    .then((res) => res.json())
-    .then((res) => {console.log(JSON.parse(res));
-
-    });
+fetch('http://localhost:4456/Wedeczki/public/app/login/login.php', {
+    method: 'post',
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(
+        new Array(inputs.length).fill(0).map((el, i) => {
+            return  {
+                        name: inputs[i].name,
+                        value: inputs[i].value
+                    };
+        })
+    )
+})
+.then(res => res.json())
+.then(res => {
+    console.log(res);
 });
 
 

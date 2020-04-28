@@ -28,6 +28,7 @@
 
 .mainContent{
     @include margins($Size1);
+    font-size: 34px;
 
     &Wrapper{
         position: relative;
@@ -37,6 +38,11 @@
         width: 100%;
         overflow: hidden;
         padding: 30px 0;
+
+        &Title{
+            padding-bottom: 20px;
+            color: $red1hover;
+        }
     }
 
     &BlocksOverScreen{
@@ -53,6 +59,9 @@
         display: flex;
         justify-content: center;
         padding: 0;
+        color: $blue1;
+        font-weight: 300;
+        font-size: 0.62em;  
     
         &Middle{
             width: 92%;
@@ -70,6 +79,10 @@
                 border-radius: 2px;
             }
         }
+
+        &Title{
+
+        }
     }
 
     &Buttons{
@@ -83,7 +96,7 @@
 
     & .buttonForward, & .buttonBackward{
         position: absolute;
-        top: 40%;
+        top: 50%;
         opacity: 0.85;
 
         & img{

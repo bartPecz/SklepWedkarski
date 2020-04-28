@@ -1,7 +1,6 @@
 <?php 
-
+ 
     function mainContentBlock($title, $arrBlocks, $countOfPicturesOnStart) {
-
         global $PUBLIC;
         
         $productsList=  json_encode($arrBlocks);
@@ -13,7 +12,7 @@
 
             $img_path = $PUBLIC.$arrBlocks[$i]['path'];
             $img_name = $arrBlocks[$i]['name'];
-            $img_price = $arrBlocks[$i]['price'];
+            $img_price = $arrBlocks[$i]['price'].' zł';
 
             $button_forward = 'buttonForward';
             $button_backward = 'buttonBackward';

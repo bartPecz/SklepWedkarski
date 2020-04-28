@@ -27,7 +27,7 @@ export default class SlidingBarSlider extends SliderControler {
 
         window.addEventListener('resize', () => {
 
-            this.imgFrameWidth = Math.floor(window.innerWidth / 60) * 60;
+            // this.imgFrameWidth = Math.floor(window.innerWidth / 60) * 60;
             this.imgFrame.style.transitionProperty = 'none';
             this.position = 0;
             this.isAnimate = false;

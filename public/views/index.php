@@ -16,26 +16,17 @@
 
 
 <body>
-
-    <!-- <div id="forward">
-        Forward
-    </div>
-
-    <div id="backward">
-        Backward
-    </div> -->
-
     <header>
-        <?php include $PUBLIC.'viewsComponent/topBar.php';?>
+        <?php require $PUBLIC.'viewsComponent/topBar.php';?>
         <nav>
-            <?php include $PUBLIC.'viewsComponent/navBar.php';?> 
+            <?php require $PUBLIC.'viewsComponent/navBar.php';?> 
         </nav> 
     </header>
 
     <div class="background1">
         <div class="gray2Border">
             <div class="mainContent">
-                <?php include $PUBLIC.'app/build/mainContents.php';?>
+                <?php require $PUBLIC.'app/build/mainContents.php';?>
             </div>
         </div>
     </div>
@@ -139,10 +130,10 @@
                 </div>
                 <div class="icons">
                     <div class="phone">
-                        <img src="../img/phone.jpg">
+                        <img width="35"src="../img/phone.png">
                     </div>
                     <div class="addres">
-                        <img src="../img/addres.jpg" alt="">
+                        <img width="30" src="../img/addres.png">
                     </div>
                 </div>
             </div>

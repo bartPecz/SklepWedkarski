@@ -17,7 +17,7 @@
     foreach($sql_ask as $title => $sql) {
 
         $con->connectAll($sql);
-        echo mainContentBlock($title, $con -> result, 10);
+        echo mainContentBlock($title, $con->result, 10);
     }
 
     $con -> close();

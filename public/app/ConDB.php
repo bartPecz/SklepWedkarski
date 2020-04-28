@@ -1,6 +1,6 @@
 <?php
-
 require_once $PUBLIC.'app/config.php';
+
 
 class ConDB extends mysqli {
 
