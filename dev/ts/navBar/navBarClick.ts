@@ -1,8 +1,11 @@
+import ROOT from '../ROOT';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const navBars = document.querySelectorAll('.navBar > div');
     const navBarTiles = document.querySelector('.navBarTiles') as HTMLElement;
     const navBarTilesUl = document.querySelector('.navBarTiles > ul') as HTMLElement;
+    const categories = document.querySelectorAll('.categorySelect') as NodeListOf<HTMLElement>;
 
     navBars[0].addEventListener('click', () => {
 
@@ -48,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const style = navBarTiles.style;
             const styleUl = navBarTilesUl.style; 
-            
+        
 
             if(style.getPropertyValue('background-color') == 'rgb(187, 59, 59)') style.setProperty('background-color', null);
             else style.setProperty('background-color', 'rgb(187, 59, 59)');
@@ -63,5 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }             
         }
     });
+
+    for(const category of categories) {
+
+        const categoryName = category.dataset.category
+
+        category.addEventListener('click', e => {
+            
+            const category = e.target as HTMLElement;     
+            
+            fetch(ROOT + 'app/productsSelect/categoryFromNavBar.php',{
+                method: 'POST',
+                body: categoryName
+            });
+        });
+    }
 });
 

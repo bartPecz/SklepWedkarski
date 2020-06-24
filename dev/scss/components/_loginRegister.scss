@@ -8,7 +8,8 @@
     position: fixed;
     top: 30%;
     padding: 30px;
-    background-color: $blue1;
+    // background-color: $blue1;
+    background-color: #c5c5c5;
     opacity: 0.98;
     display: flex;
     flex-direction: column;
@@ -18,7 +19,10 @@
 
     .Title{
         font-size: 30px;
-        color: $gray1;
+        // font-style: italic;
+        font-weight: 300;
+        // color: $gray1;
+        color: #443939;
         margin-bottom: 10px;
     }
 
@@ -26,10 +30,26 @@
         margin: 10px 0;
         padding: 4px;
         width: 200px;
+        outline: none;
     }
 
     button{
-        // font-family: 'Lato';
+        cursor: pointer;
+    }
+
+
+    .exit{
+        $distance: 8px;
+
+        position: absolute;
+        width: 14px;
+        right: $distance;
+        top: $distance;
+        cursor: pointer;
+
+        img{
+            width: 100%;
+        }
     }
 }
 

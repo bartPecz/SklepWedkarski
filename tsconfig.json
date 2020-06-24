@@ -8,6 +8,7 @@
   },
   "exclude" : [
     "public",
-    "webpack.config.js"
+    "webpack.config.js",
+    "dev/ts/apex.ts"
   ]
 }

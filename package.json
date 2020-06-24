@@ -10,11 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jquery": "^3.3.36",
+    "@types/jqueryui": "^1.12.10",
     "apexcharts": "^3.17.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.5.0",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-bundle": "^1.12.1-migrate"
+  }
 }

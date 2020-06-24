@@ -1,35 +1,55 @@
 export class FormController {
 
     public button: HTMLElement;
+    public conditionExecution: boolean;
 
-    constructor(public inputs: HTMLCollectionOf<HTMLInputElement>) {
+    constructor(public inputs: HTMLCollectionOf<HTMLInputElement>, public submitButton: HTMLElement) {
+        
+        if(this.constructor === FormController) throw new Error(`Can't use abstract class to create object instances`);
+
         this.inputs = inputs;
-        this.button = document.querySelector('.loginBoxContainer .loginButton');
+        this.button = submitButton;
+
     }
 
-    launch() {
+    launch(fn = null) {
         
         for(const input of [...this.inputs] as [HTMLInputElement]) {
 
-            this.condition6Letters(input);            
+            input['conditions'] = new Object();
+
+            this.condition6Letters(input); 
+            this.forbidenSigns(input);           
         }
+
+        this.submitButton['conditions'] = new Object();
+
+        if(fn != null) fn();
     }
 
     generateHelpWindow(input: HTMLInputElement, message: string, condition: string): HTMLElement {
 
         const helpWindow = document.createElement('div');
 
-        helpWindow.innerHTML = `<div>${input.name + ' ' + message}</div>`;
+        helpWindow.innerHTML = `<div>- ${input.name + ' ' + message}</div>`;
 
-        input[condition] = new Object();
+        helpWindow.style.setProperty('font-size', '14px');
+        helpWindow.style.setProperty('color', 'rgb(226, 126, 126)');
+        helpWindow.style.setProperty('width', '200px');
 
-        input[condition].content = helpWindow;
+        input['conditions'][condition] = new Object();
+
+        input['conditions'][condition].content = helpWindow;
 
         return helpWindow;
     }
 
-    addHelpWindow(input: HTMLInputElement, condition: string) {
-        input.after(input[condition].content);
+    addHelpWindow(input: HTMLInputElement, condition: string, redbox: boolean = true) {
+
+        input.after(input['conditions'][condition].content);
+        
+        input['conditions'][condition].isActive = true;
+        this.conditionExecution = false;
 
         let style = 
             `
@@ -37,35 +57,32 @@ export class FormController {
                 background-color: rgb(226, 126, 126);
             `;
 
-        input.style.cssText = style;
+        if(redbox) input.style.cssText = style;
 
     }
 
     removeHelpWindow(input: HTMLInputElement, condition: string) {
-        input[condition].content.remove();
+
+        input['conditions'][condition].content.remove();
+
+        input['conditions'][condition].isActive = false;
+
+        for(const condition in input['conditions']) {
+
+            if(input['conditions'][condition].isActive) return 0;
+        }
 
         input.style.cssText = null;
+        this.conditionExecution = true; // Działa tylko wtedy gdy warunki są sprawdzane przed wysłaniem
     }
 
     condition6Letters(input) {
 
-        let message = 'musi składać się z conjamniej 6 liter';
+        let message = 'musi składać się z conajmniej 6 liter';
         let condition = 'condition6Letters';
 
         this.showAbove6Letters(input, this.button, condition, message);
         this.removeUnder6Letters(input, condition);
-    }
-
-    removeUnder6Letters(input: HTMLInputElement, condition: string) {
-
-        const removeWhenLetterUnder6 = () => {
-
-            if(input.value.length >= 6) {
-                this.removeHelpWindow(input, condition);
-            }
-        }
-
-        input.addEventListener('input', removeWhenLetterUnder6);
     }
 
     showAbove6Letters(input: HTMLInputElement, button: HTMLElement, condition: string, message: string) {
@@ -81,4 +98,41 @@ export class FormController {
         
         button.addEventListener('click', addWhenLetterAbove6);
     }
+
+    removeUnder6Letters(input: HTMLInputElement, condition: string) {
+        const removeWhenLetterUnder6 = () => {
+            console.log(condition);
+
+            if(input.value.length >= 6) {
+                this.removeHelpWindow(input, condition);
+            }
+        }
+
+        input.addEventListener('input', removeWhenLetterUnder6);
+    }
+
+    forbidenSigns(input: HTMLInputElement) {
+
+        if(input.type == 'password') return 0;
+        
+        let message = 'posiada niedozwolony znak';
+        let condition = 'forbidenSigns';
+
+        this.generateHelpWindow(input, message, condition);
+
+        const reg = /[!@#\$%\^&\*\(\)\\\?<>\s]/i;
+
+        const addWhenForbidenSign = () => {
+
+            if(reg.test(input.value)) {
+                this.addHelpWindow(input, condition);
+            }
+            else {
+                this.removeHelpWindow(input,condition);
+            }
+        }
+
+        input.addEventListener('input', addWhenForbidenSign);
+    }
+
 }

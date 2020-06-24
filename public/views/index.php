@@ -18,9 +18,7 @@
 <body>
     <header>
         <?php require $PUBLIC.'viewsComponent/topBar.php';?>
-        <nav>
-            <?php require $PUBLIC.'viewsComponent/navBar.php';?> 
-        </nav> 
+        <?php require $PUBLIC.'viewsComponent/navBar.php';?> 
     </header>
 
     <div class="background1">
@@ -101,47 +99,10 @@
         </div>
     </div>
     
-    <footer>
-        <div class="background3">
-            <div class="footer">
-                <div class="shop">
-                        <div class="shopTitle">
-                            Sklep
-                        </div>
-                        <div class="shopText">
-                            <div>Dane kontaktowe</div>
-                            <div>Współpraca</div>
-                            <div>Promocje</div>
-                            <div>Regulamin</div>
-                        </div>
-                </div>
-                <div clas="categories">
-                        <div class="categoriesTitle">
-                            Kategorie
-                        </div>
-                        <div class="categoriesText">
-                                <div>Wędki</div>
-                                <div>Kołowrotki</div>
-                                <div>Przynęty</div>
-                        </div>
-                </div>
-                <div class="abouUs">
-                    O nas
-                </div>
-                <div class="icons">
-                    <div class="phone">
-                        <img width="35"src="../img/phone.png">
-                    </div>
-                    <div class="addres">
-                        <img width="30" src="../img/addres.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   <?php require '../viewsComponent/footer.php';?>
     
 
     
-    <script src="../js/bundle.js" ></script>
+    <script src="../js/index.bundle.js" ></script>
 </body>
 </html>

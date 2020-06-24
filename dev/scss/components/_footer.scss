@@ -1,0 +1,52 @@
+.background3{
+    background-color: $black1;
+}
+
+.footer{
+    @include margins($Size1);
+    @include responsiveWidth;
+
+    padding: 40px 0;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+    .shopText, .categoriesText{
+        font-size: 0.55em;
+        font-weight: 300;
+        padding-top: 14px;
+        
+        div{
+            padding: 4px 0;
+            cursor: pointer;
+        }
+    }
+
+    .icons{
+        font-size: 18px;
+
+        $iconsSize: 40px;
+
+        .phone, .addres{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            font-size: 16px;
+
+            img{
+                width: $iconsSize;
+                padding-right: 10px;
+            }
+        }
+
+        .addres{
+
+            img{
+                width: $iconsSize - 5;
+                margin-left: 20px;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 <?php
 
 echo<<<end
-
+<nav>
     <div class="background2">
         
         <div class="navBar">
@@ -19,14 +19,26 @@ echo<<<end
                     </div>
                     
                     <ul>
-                        <li>Wędki</li>
-                        <li>Kołowrotki</li>
-                        <li>Przynęty</li>
+                        <li class="categorySelect" data-category="Wędki">
+                            <a href="{$ROOT}views/products.php">
+                                Wędki
+                            </a>
+                        </li>
+                        <li class="categorySelect" data-category="Kołowrotki">
+                            <a href="{$ROOT}views/products.php">
+                                Kołowrotki
+                            </a>
+                        </li>
+                        <li class="categorySelect" data-category="Przynęty">
+                            <a href="{$ROOT}views/products.php">
+                                Przynęty
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <a href="#" class="navBarTiles">Kontakt</a>
-                <a href="#" class="navBarTiles">Regulamin</a>
-                <a href="#" class="navBarTiles">O nas</a>
+                <a href="" class="navBarTiles">Kontakt</a>
+                <a href="" class="navBarTiles">Regulamin</a>
+                <a href="" class="navBarTiles">O nas</a>
             </div>
 
             <div class="navBarR">
@@ -39,7 +51,7 @@ echo<<<end
         </div>
 
     </div>
-
+</nav>
 
 end
 

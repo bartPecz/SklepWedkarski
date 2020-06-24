@@ -2,22 +2,8 @@
 
 @import './components/_topBar.scss',
         './components/_navBar.scss',
-        './components/_loginRegister.scss';
-
-
-                        #forward{
-                            position: fixed;
-                            top: 0;
-                            left: 100px;
-                        }
-
-                        #backward{
-                            position: fixed;
-                            top: 0;
-                        }
-
-
-
+        './components/_loginRegister.scss',
+        './components/_footer.scss';
 
 
 //MAIN CONTENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -302,35 +288,5 @@
         font-size: 16px;
     }
 }
-
-
-// FOOTER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-.background3{
-    background-color: $black1;
-}
-
-.footer{
-    @include margins($Size1);
-    @include responsiveWidth;
-
-    padding: 40px 0;
-    font-size: 30px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-
-    .shopText, .categoriesText{
-        font-size: 0.55em;
-        font-weight: 300;
-        padding-top: 14px;
-        
-        div{
-            padding: 4px 0;
-            cursor: pointer;
-        }
-    }
-}
-
 
 @include hide;

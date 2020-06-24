@@ -1,0 +1,121 @@
+@import './components/_config.scss';
+
+@import './components/_topBar.scss',
+        './components/_navBar.scss',
+        './components/_loginRegister.scss',
+        './components/_footer.scss';
+
+
+$margins: 10px;
+
+.productsWrapper{
+    display: flex;
+    align-items: flex-start;
+    margin: 0 $margins;
+    // font-weight: 300;
+
+    > .left{
+        background-color: $gray3;
+        color: $brown2;
+        font-size: 28px;
+        padding: 0 30px;
+        margin-top: 65px;
+        $radius: 5px;
+        border-top: {
+            left-radius: $radius;
+            right-radius: $radius;
+        } 
+
+        .filter{
+            margin-top: 20px;
+            // border-bottom: 2px solid $brown2;
+        }
+        
+        .categories{
+            margin: 20px 0;
+            font-size: 0.8em;
+
+            label{
+                font-size: 0.57em;
+            }
+        }
+
+        .price{
+            font-size: 0.8em;
+
+            .priceLabel{
+                display: flex;
+            }
+
+            #priceRange {
+                background-color: $gray3;
+                border: 0; 
+                font-weight: bold;
+            }
+        }
+
+    }
+
+    > .right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        
+        .sortPanel{
+            display: flex;
+            align-items: center;
+            height: 35px;
+            padding: 0 5px;
+            border-radius: 5px;
+            color: $brown2;
+            background-color: $gray3;
+            margin: 10px 0;
+
+            *{
+                $margins: 2px;
+                margin: {
+                    left: $margins;
+                    right: $margins;
+                }
+            }
+        }
+    }
+}
+
+.product{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: $margins;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+
+    > .content{
+        padding-left: 10px;
+    }
+
+    .price{
+        // color: $violet2;
+        font-weight: 700;
+    
+    }
+
+    .productName{
+        // color: $violet2;
+        font-size: 0.8em;
+    }
+
+    .description{
+        font-size: 0.8em;
+        text-align: justify;
+        // color: $violet2;
+        margin-top: 10px;
+    }
+}
+
+
+
+@include hide;

@@ -3,7 +3,7 @@
     function mainContentBlock($title, $arrBlocks, $countOfPicturesOnStart) {
         global $PUBLIC;
         
-        $productsList=  json_encode($arrBlocks);
+        $productsList= json_encode($arrBlocks);
 
         $block = '';
         $content = '';
