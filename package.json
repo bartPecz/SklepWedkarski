@@ -21,6 +21,8 @@
   "dependencies": {
     "jquery": "^3.5.0",
     "jquery-ui": "^1.12.1",
-    "jquery-ui-bundle": "^1.12.1-migrate"
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "query-string": "^6.13.8",
+    "url-parse": "^1.4.7"
   }
 }

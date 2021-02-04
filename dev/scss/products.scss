@@ -27,30 +27,60 @@ $margins: 10px;
         } 
 
         .filter{
-            margin-top: 20px;
-            // border-bottom: 2px solid $brown2;
+            margin-top: 40px;
+        }
+
+        .filterPicture{
+            display: inline-block;
+            width: 19px;
+            margin-left: 8px;
+        }
+
+        .mark{
+            font-size: 0.8em;
         }
         
-        .categories{
+        .categories, .mark, .sliderBlock{
             margin: 20px 0;
-            font-size: 0.8em;
+            
 
             label{
-                font-size: 0.57em;
+                font-size: 0.62em;
             }
         }
 
-        .price{
+        // .mark{
+        //     margin: 20px 0;
+        //     font-size: 0.8em;
+        // }
+
+        // .marks{
+        //     font-size: 0.57em;
+        // }
+
+        .price {
             font-size: 0.8em;
 
-            .priceLabel{
+            .sliderLabel{
                 display: flex;
+                // align-items: baseline;
+                // margin-bottom: 10px;
+                // width: 10px;
             }
+
+            .sliderTitle {}
 
             #priceRange {
                 background-color: $gray3;
                 border: 0; 
-                font-weight: bold;
+                font-size: 0.75em;
+                color: $brown2;
+                margin-left: 4px;
+                width: 150px;
+            }
+
+            #slider{
+                margin-top: 10px;
             }
         }
 
@@ -119,3 +149,4 @@ $margins: 10px;
 
 
 @include hide;
+@include scaleYShow;

@@ -449,7 +449,13 @@ body {
 }
 
 .loginBoxContainer {
+  position: fixed;
+  top: 30%;
   width: 100%;
+  z-index: 10000;
+}
+
+.loginBoxCenter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,10 +464,8 @@ body {
           justify-content: center;
 }
 
-.loginBoxMiddle {
-  position: fixed;
-  top: 30%;
-  padding: 30px;
+.loginBox {
+  position: absolute;
   background-color: #c5c5c5;
   opacity: 0.98;
   display: -webkit-box;
@@ -475,36 +479,45 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 6px;
+  padding: 16px;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
-.loginBoxMiddle .Title {
+.loginBox .Title {
   font-size: 30px;
   font-weight: 300;
   color: #443939;
   margin-bottom: 10px;
 }
 
-.loginBoxMiddle input {
+.loginBox input {
   margin: 10px 0;
   padding: 4px;
   width: 200px;
   outline: none;
 }
 
-.loginBoxMiddle button {
+.loginBox button {
   cursor: pointer;
 }
 
-.loginBoxMiddle .exit {
-  position: absolute;
-  width: 14px;
-  right: 8px;
-  top: 8px;
+.loginBox .exit {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   cursor: pointer;
 }
 
-.loginBoxMiddle .exit img {
-  width: 100%;
+.loginBox .exit img {
+  width: 15px;
+}
+
+.zIndexToTop {
+  z-index: 1;
 }
 
 .background3 {
@@ -610,23 +623,32 @@ body {
 }
 
 .productsWrapper > .left .filter {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-.productsWrapper > .left .categories {
-  margin: 20px 0;
+.productsWrapper > .left .filterPicture {
+  display: inline-block;
+  width: 19px;
+  margin-left: 8px;
+}
+
+.productsWrapper > .left .mark {
   font-size: 0.8em;
 }
 
-.productsWrapper > .left .categories label {
-  font-size: 0.57em;
+.productsWrapper > .left .categories, .productsWrapper > .left .mark, .productsWrapper > .left .sliderBlock {
+  margin: 20px 0;
+}
+
+.productsWrapper > .left .categories label, .productsWrapper > .left .mark label, .productsWrapper > .left .sliderBlock label {
+  font-size: 0.62em;
 }
 
 .productsWrapper > .left .price {
   font-size: 0.8em;
 }
 
-.productsWrapper > .left .price .priceLabel {
+.productsWrapper > .left .price .sliderLabel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -635,7 +657,14 @@ body {
 .productsWrapper > .left .price #priceRange {
   background-color: #e4e4e4;
   border: 0;
-  font-weight: bold;
+  font-size: 0.75em;
+  color: #5f3f3f;
+  margin-left: 4px;
+  width: 150px;
+}
+
+.productsWrapper > .left .price #slider {
+  margin-top: 10px;
 }
 
 .productsWrapper > .right {
@@ -709,4 +738,9 @@ body {
 
 .hide {
   display: none;
+}
+
+.scaleYShow {
+  -webkit-transform: scaleY(0.98);
+          transform: scaleY(0.98);
 }

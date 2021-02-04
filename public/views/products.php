@@ -1,9 +1,8 @@
 <?php
     $PUBLIC = '../';
     require_once $PUBLIC.'app/ROOT.php';
-    session_start();
-
-    $categories = Array('Wędki', 'Kołowrotki', 'Przynęty');
+    require_once $PUBLIC.'app/ConDB.php';
+    session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -27,35 +26,31 @@
     <div class="background1">
         <div class="productsWrapper">
             <div class="left">
-                <div class="filter">Filtry</div>
                 <div class="categories">
                     <div>Kategorie</div>
-                        <?php
-                        foreach($categories as $category) {
-                            // $checked = $_GET['category'] == $category ? 'checked' : null;
-                            $checked = null;
-
-                            echo<<<end
-                            <div>
-                                <input class="category" type="checkbox" name="$category" $checked><label for="${category}">${category}</label>
-                            </div>
-                            end;
-                        }
-                        ?>
+                    <div id="categories"></div>
                 </div>
-                <div id="price" class="price">
-                    <div class="priceLabel">
-                        <div>Cena</div>
-                        <input type="text" id="priceRange" readonly>
+
+                <div class="filter">Filtry<img class="filterPicture" src="../img/setting-lines.png" alt=""></div>
+
+                <div class="sliderBlock price">
+                    <div class="sliderLabel">
+                        <div class="sliderTitle">Cena</div><input type="text" id="priceRange" readonly/>
                     </div>
                     <div id="slider"></div>
                 </div>
-                <div class="mark"></div>
+
+                <div class="mark">
+                    <div class="markLabel">
+                        Marka
+                    </div>
+                    <div id="marks" class="marks"></div>
+                </div>
             </div>
             <div class="right">
                 <div class="sortPanel">
                     <div >Sortuj:</div>
-                    <select name="">
+                    <select id="sortPanel" name="sort">
                         <option value="a-z">Alfabetycznie</option>
                         <option value="lowestPrice">Ceny rosnąco</option>
                         <option value="biggestPrice">Ceny malejąco</option>

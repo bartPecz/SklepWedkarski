@@ -4,35 +4,39 @@ import ROOT from '../ROOT';
 const loginBoxContainer = document.createElement('div');
 
 const loginbBox = 
-`           
-    <div class="loginBoxMiddle">
+`       
+<div class="loginBoxCenter">
+    
+        <div id="loginBox" class="loginBox">
+        
 
-        <div class="exit"><img src="../img/cross.png"></div>
-        <div class="Title">Zaloguj się do sklepu</div>
+            <div class="exit"><img src="../img/cross.png"></div>
+            <div class="Title">Zaloguj się do sklepu</div>
 
-        <input type="text" placeholder="login" name="login" maxlength="30">
-        <input id="loginPassword"type="password" placeholder="hasło" name="hasło" maxlength="30">
+            <input type="text" placeholder="login" name="login" maxlength="30">
+            <input id="loginPassword"type="password" placeholder="hasło" name="hasło" maxlength="30">
 
-        <button class="loginButton">Zaloguj</button>
-    </div>
+            <button class="loginButton">Zaloguj</button>
+        <div>
+</div>
 `;
 
 
 loginBoxContainer.innerHTML = loginbBox;
-loginBoxContainer.classList.add('loginBoxContainer', 'hide'); 
+loginBoxContainer.classList.add('loginBoxContainer'); 
 
 document.body.appendChild(loginBoxContainer);
 
-const loginBoxMiddle = loginBoxContainer.children[0];
+const loginBox = document.getElementById('loginBox');
 const password = document.getElementById('loginPassword') as HTMLInputElement;
-const exit = loginBoxMiddle.querySelector('.loginBoxMiddle .exit');
-const inputs = loginBoxMiddle.getElementsByTagName('input');
+const exit = document.querySelector('.loginBoxContainer .exit');
+const inputs = loginBoxContainer.getElementsByTagName('input');
 
 const loginForm = new SendForm(inputs, document.querySelector('.loginBoxContainer .loginButton'));
 
-function turnOffLoginBoxContainer(){
 
-    loginBoxContainer.classList.toggle('hide');
+function turnOffLoginBoxContainer(){
+    loginBox.classList.toggle('scaleYShow');
     password.value = '';
     console.dir(password);
     loginForm.removeHelpWindow(password, 'condition6Letters');

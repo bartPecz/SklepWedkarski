@@ -1,21 +1,39 @@
 .loginBoxContainer{
+    // display: flex;
+    // justify-content: center;
+    // position: absolute;
+    position: fixed;
+    top: 30%;
     width: 100%;
+    z-index: 10000;
+    // top: 0;
+    // margin-left: auto;
+    // margin-right: auto;
+    // width: 400px;
+    // left: 28%;
+    // margin-right: 20px;;
+    // right: 30%;
+    // z-index: -1;
+}
+
+.loginBoxCenter{
     display: flex;
     justify-content: center;
 }
 
-.loginBoxMiddle{
-    position: fixed;
-    top: 30%;
-    padding: 30px;
+.loginBox{
     // background-color: $blue1;
+    position: absolute;
+    // z-index: 100000; nic nie daje trzeba u pierwszego rodzica z ustalonym position innym niż static(wpływa na wszystkie dzieci z z-index
     background-color: #c5c5c5;
     opacity: 0.98;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 6px;
-
+    padding: 16px;
+    transform: scaleY(0);
+    transition: transform 0.2s ease-out;
 
     .Title{
         font-size: 30px;
@@ -39,17 +57,27 @@
 
 
     .exit{
-        $distance: 8px;
-
-        position: absolute;
-        width: 14px;
-        right: $distance;
-        top: $distance;
+        // $distance: 8px;
+        // width: 100%;
+        align-self: flex-end;
+        // text-align: right;
+        // position: absolute;
+        // width: 14px;
+        // right: $distance;
+        // top: $distance;
         cursor: pointer;
 
         img{
-            width: 100%;
+            // width: 100%;
+            width: 15px;
+            // display: inline;
         }
     }
 }
 
+
+// JS
+
+.zIndexToTop{
+    z-index: 1;
+}

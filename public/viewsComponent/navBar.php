@@ -1,5 +1,29 @@
 <?php
 
+require_once $PUBLIC.'app/ConDB.php';
+
+$conn = new ConDB();
+
+$conn->connectAll("SELECT DISTINCT category FROM products");
+
+$categories_array_html = array_map(function($record) {
+    global $ROOT;
+
+    return  <<<end
+            <li class="categorySelect" data-category="{$record['category']}">
+                <a href="{$ROOT}views/products.php?category={$record['category']}">
+                    {$record['category']}
+                </a>
+            </li>
+            end;
+}, $conn->result);
+
+$categories_html = '';
+
+foreach($categories_array_html as $category_html) {
+    $categories_html .= $category_html;
+}
+
 echo<<<end
 <nav>
     <div class="background2">
@@ -18,22 +42,8 @@ echo<<<end
                         <img src="../img/icon.png"/>
                     </div>
                     
-                    <ul>
-                        <li class="categorySelect" data-category="Wędki">
-                            <a href="{$ROOT}views/products.php">
-                                Wędki
-                            </a>
-                        </li>
-                        <li class="categorySelect" data-category="Kołowrotki">
-                            <a href="{$ROOT}views/products.php">
-                                Kołowrotki
-                            </a>
-                        </li>
-                        <li class="categorySelect" data-category="Przynęty">
-                            <a href="{$ROOT}views/products.php">
-                                Przynęty
-                            </a>
-                        </li>
+                    <ul> 
+                       $categories_html
                     </ul>
                 </div>
                 <a href="" class="navBarTiles">Kontakt</a>
@@ -53,7 +63,9 @@ echo<<<end
     </div>
 </nav>
 
-end
+end;
+
+$conn->close();
 
 ?>
 

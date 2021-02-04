@@ -56,4 +56,10 @@
     }
 }
 
+@mixin scaleYShow{
+    .scaleYShow{
+        transform: scaleY(0.98);
+    }
+}
+
 

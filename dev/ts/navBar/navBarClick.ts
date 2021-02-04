@@ -67,19 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    for(const category of categories) {
+    // for(const category of categories) {
 
-        const categoryName = category.dataset.category
+    //     const categoryName = category.dataset.category
 
-        category.addEventListener('click', e => {
+    //     category.addEventListener('click', e => {
             
-            const category = e.target as HTMLElement;     
+    //         const category = e.target as HTMLElement;     
             
-            fetch(ROOT + 'app/productsSelect/categoryFromNavBar.php',{
-                method: 'POST',
-                body: categoryName
-            });
-        });
-    }
+    //         fetch(ROOT + 'app/productsSelect/categoryFromNavBar.php',{
+    //             method: 'POST',
+    //             body: categoryName
+    //         });
+    //     });
+    // }
 });
 
